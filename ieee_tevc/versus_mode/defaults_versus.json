@@ -1,0 +1,81 @@
+{
+    "hawks": {
+        "folder_name": null,
+        "mode": "versus",
+        "n_objectives": 1,
+        "num_runs": 1,
+        "seed_num": null,
+        "comparison": "fitness",
+        "save_best_data": false,
+        "save_stats": false,
+        "save_config": false
+    },
+    "objectives": {
+        "winner": {
+            "algorithm": "kmeans",
+            "kwargs": null,
+            "k_multiplier": null
+        },
+        "loser": {
+            "algorithm": "single_linkage",
+            "kwargs": null,
+            "k_multiplier": null
+        },
+        "scoring_method": "ari"
+    },
+    "dataset": {
+        "num_examples": 1000,
+        "num_clusters": 10,
+        "num_dims": 2,
+        "equal_clusters": false,
+        "min_clust_size": 5
+    },
+    "ga": {
+        "num_gens": 50,
+        "num_indivs": 10,
+        "mut_method_mean": "pso",
+        "mut_args_mean": {
+            "random": {
+                "scale": 1.0,
+                "dims": "each"
+            },
+            "rails": {
+                "scalar_lower": 0.0,
+                "scalar_higher": 1.0
+            },
+            "pso": {
+                "scalar_lower": 0.0,
+                "scalar_higher": 1.0
+            },
+            "de": {
+                "F": 1.0
+            }
+        },
+        "mut_method_cov": "haar",
+        "mut_args_cov": {
+            "haar": {
+                "power": 0.3
+            }
+        },
+        "mut_prob_mean": "length",
+        "mut_prob_cov": "length",
+        "mate_scheme": "dv",
+        "mate_prob": 0.7,
+        "prob_fitness": 0.5,
+        "elites": 0,
+        "initial_mean_upper": 1.0,
+        "initial_cov_upper": 0.5,
+        "environ_selection": "sr",
+        "parent_selection": "tournament"
+    },
+    "constraints": {
+        "overlap": {
+            "threshold": 0.0,
+            "limit": "upper"
+        },
+        "eigenval_ratio": {
+            "threshold": 20,
+            "limit": "upper"
+        }
+    }
+}
