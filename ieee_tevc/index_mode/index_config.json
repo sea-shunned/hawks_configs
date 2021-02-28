@@ -1,0 +1,99 @@
+{
+    "hawks": {
+        "folder_name": "index-mode",
+        "save_best_data": true,
+        "save_stats": true,
+        "save_config": true,
+        "seed_num": 0,
+        "num_runs": 7,
+        "mode": "single",
+        "n_objectives": 1,
+        "comparison": "fitness"
+    },
+    "dataset": {
+        "num_examples": [
+            500,
+            2500
+        ],
+        "num_dims": [
+            2,
+            50
+        ],
+        "num_clusters": [
+            5,
+            30
+        ],
+        "min_clust_size": 10,
+        "equal_clusters": false
+    },
+    "objectives": {
+        "silhouette": {
+            "target": [
+                0.45,
+                0.9
+            ]
+        }
+    },
+    "ga": {
+        "num_gens": 100,
+        "prob_fitness": 0.5,
+        "elites": 0,
+        "mut_method_mean": "pso",
+        "mut_args_mean": {
+            "pso": {
+                "scalar_lower": 0.0,
+                "scalar_higher": 1.0
+            },
+            "random": {
+                "scale": 1.0,
+                "dims": "each"
+            },
+            "rails": {
+                "scalar_lower": 0.0,
+                "scalar_higher": 1.0
+            },
+            "pso_informed": {
+                "scalar_lower": 0.0,
+                "scalar_higher": 1.0
+            },
+            "pso_full": {
+                "scalar_lower": -1.0,
+                "scalar_higher": 1.0
+            },
+            "de": {
+                "F": 1.0
+            }
+        },
+        "initial_mean_upper": 2.0,
+        "num_indivs": 10,
+        "mut_method_cov": "haar",
+        "mut_args_cov": {
+            "haar": {
+                "power": 0.3
+            }
+        },
+        "mut_prob_mean": "length",
+        "mut_prob_cov": "length",
+        "mate_scheme": "dv",
+        "mate_prob": 0.7,
+        "initial_cov_upper": 0.5,
+        "environ_selection": "sr",
+        "parent_selection": "tournament"
+    },
+    "constraints": {
+        "overlap": {
+            "threshold": [
+                0.0,
+                0.1
+            ],
+            "limit": "upper"
+        },
+        "eigenval_ratio": {
+            "threshold": [
+                1,
+                50
+            ],
+            "limit": "lower"
+        }
+    }
+}
